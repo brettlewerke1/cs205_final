@@ -4,6 +4,29 @@
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
 # ======= END SUMMARY =======
+# 001
+# Lewerke
+# Brett
+# bdl85
+BEGIN{FS="\t"}
+{
+if (NR!=1){
+#Increment hp and attack
+hp+= $6
+attack+=$7
+
+#find sum for each
+sum+=1
+meanhp = hp / sum
+meanattack = attack / sum
+}
+}
+END{
+# Prints the variables
+print sum
+print meanhp
+print meanattack}
+
 
 # The "Avg." values should be calculated as mean values for the corresponding columns.
 # The spacing and header formatting should match the above formatting description exactly.
